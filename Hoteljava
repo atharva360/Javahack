@@ -34,10 +34,10 @@ public class Main
  p[i] = new Hotel();
  p[i].accept();
  }
- System.out.println("List Of Hotels:\n");
+ System.out.println("List Of Hotels are as follows :\n");
 2
  sort(p,n);
- System.out.println("Sorted List according to Hotel Chares");
+ System.out.println("Sorted List according to Hotel Charges ");
  for( int i=0;i<n;i++)
  {
  p[i].display();
