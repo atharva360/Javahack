@@ -1,0 +1,63 @@
+import java.util.*;
+class Hotel
+{
+ Scanner s = new Scanner(System.in);
+ String hname,city;
+ int charge;
+ void accept()
+ {
+ System.out.println("Enter Name Of the Hotel:");
+ hname =s.nextLine();
+ System.out.println("Name of the City:");
+ city =s.nextLine();
+ System.out.println("Charges per Room:");
+1
+ charge=s.nextInt();
+ }
+ void display()
+ {
+ System.out.println(hname+" "+city+" "+charge);
+ }
+}
+public class Main
+{
+ public static void main (String[] args)
+ {
+
+ Scanner s = new Scanner(System.in);
+ System.out.println("Enter Number of Hotels:");
+ int n = s.nextInt();
+ Hotel p[] = new Hotel[n];
+ System.out.println("Enter details of Hotels:");
+ for(int i=0;i<n;i++)
+ {
+ p[i] = new Hotel();
+ p[i].accept();
+ }
+ System.out.println("List Of Hotels:\n");
+2
+ sort(p,n);
+ System.out.println("Sorted List according to Hotel Chares");
+ for( int i=0;i<n;i++)
+ {
+ p[i].display();
+ }
+ }
+ static void sort(Hotel p[],int n)
+ {
+ Hotel temp = new Hotel();
+ for(int i=0;i<n;i++)
+ {
+ for(int j=i;j<n;j++)
+ {
+ if(p[i].charge>p[j].charge)
+ {
+ temp=p[i];
+ p[i]=p[j];
+ p[j]=temp;
+ }
+ }
+ }
+ }
+3
+}
